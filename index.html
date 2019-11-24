@@ -66,6 +66,25 @@ body {
 	background-color: #ddd;
 	color: black;
 	}
+	
+.column {
+  float: left;
+}
+
+.left, .right {
+  width: 30%
+}
+
+.middle {
+  width: 40%
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 </style>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -96,11 +115,28 @@ body {
   <a href="https://www.ultraseltzer.org">Ultra Seltzer</a>
 </div>
 
-<p>
-<br/>
-<font size="3"><b>Contact:</b></font> kwgao@berkeley.edu 
-</p>
-<img src="https://lh3.googleusercontent.com/Qj1DCCgQ0q1Pnk72dZyHUQEDal9AyMaA1fpgUzfKTk5aIGnqd__gyMY3eumf8C3BIx2IXxd7Knw_eylebEoTuy4oTy3NZnwp1Rxdh8B0KouIkWdnFh5CwXJ0ScKfa0m2XBKbjabmYg=w2400" width=20% height=20%>
+<div class="row">
+  <div class="column left">
+	<br/>
+	<h2><font size="5"> Kevin W. Gao </font></h2>
+	<img src="https://lh3.googleusercontent.com/Qj1DCCgQ0q1Pnk72dZyHUQEDal9AyMaA1fpgUzfKTk5aIGnqd__gyMY3eumf8C3BIx2IXxd7Knw_eylebEoTuy4oTy3NZnwp1Rxdh8B0KouIkWdnFh5CwXJ0ScKfa0m2XBKbjabmYg=w2400" width=35% height=70%>
+    <p>
+    <br/>
+    <font size="3"><b>Contact:</b></font> kwgao@berkeley.edu 
+    </p>
+  </div>
+  <div class="column middle">
+    <br/>
+	<br/>
+    <p> 
+	  <b>Present</b> PhD Candidate Chemical Engineering, <i>University of California, Berkeley</i><br/>
+	  <b>2017</b> B.S. Chemical Engineering, <i>California Institute of Technology</i><br/>
+	  <b>2016</b> Summer Research Fellow, <i>Massachusetts Institute of Technology</i><br/>
+	  <b>2012</b> Intern, <i>Los Alamos National Laboratory</i>
+	</p>
+  </div>
+</div>
+
 
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
