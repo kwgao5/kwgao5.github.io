@@ -71,12 +71,16 @@ body {
   float: left;
 }
 
-.left, .right {
-  width: 30%
+.left {
+  width: 25%
+}
+
+.right {
+  width: 15%
 }
 
 .middle {
-  width: 40%
+  width: 60%
 }
 
 /* Clear floats after the columns */
@@ -85,12 +89,16 @@ body {
   display: table;
   clear: both;
 }
+  
+.image {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
 
-img {
-  max-width:100%;
-  height:auto;
-  max-height:100%;
-  }
+.text {
+  text-align: center;
+}
 </style>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -110,8 +118,8 @@ img {
 <body>
 
 <div class="header">
-  <h1>Website under development</h1>
-  <span class="byline">expected completion 2020</span>
+  <h1>Kevin W. Gao</h1>
+  <span class="byline">website completion by 2020</span>
 </div>
 
 <div class="topnav">
@@ -124,8 +132,11 @@ img {
 <div class="row">
   <div class="column left">
 	<br/>
-	<h2><font size="5"> Kevin W. Gao </font></h2>
-	<img src="https://raw.githubusercontent.com/kwgao5/kwgao5.github.io/master/profile.png" width=40% height=40%>
+	<div class="text">
+      <div class="image">
+	    <img src="https://raw.githubusercontent.com/kwgao5/kwgao5.github.io/master/profile.png" width=50% height=50%>
+      </div>
+	</div>
   </div>
   <div class="column middle">
     <br/>
@@ -133,7 +144,7 @@ img {
     <p> 
 	  <b>Present</b> PhD Candidate Chemical Engineering, <i>University of California, Berkeley</i><br/>
 	  <b>2017</b> B.S. Chemical Engineering, <i>California Institute of Technology</i><br/>
-	  <b>2016</b> Summer Research Fellow, <i>Massachusetts Institute of Technology</i><br/>
+	  <b>2016</b> Summer Undergraduate Research Fellow, <i>Massachusetts Institute of Technology</i><br/>
 	  <b>2012</b> Intern, <i>Los Alamos National Laboratory</i><br/><br/>
       <font size="3"><b>Contact:</b></font> kwgao@berkeley.edu 
 	</p>
