@@ -83,23 +83,6 @@ body {
 	color: black;
 	}
 	
-.column {
-	float: left;
-	padding: 20px;
-	}
-
-.left {
-	width: 30%;
-	}
-
-.right {
-	width: 30%;
-	}
-
-.middle {
-	width: 40%;
-	}
-
 /* Clear floats after the columns */
 .row:after {
 	content: "";
@@ -111,6 +94,18 @@ body {
 	max-width: 100%;
 	height: auto;
 	max-height: 100%;
+	}
+	
+.column {
+	float: left;
+	}
+
+.left {
+	width: 50%;
+	}
+
+.right {
+	width: 50%;
 	}
 
 .text {
@@ -132,27 +127,47 @@ body {
 </div>
 
 <br/>
+<h2> Hobbies and Projects </h2><br/>
 <div class="row">
-  <div class="column middle">
-  <h2> Under construction... </h2>
-  </div>
   <div class="column left">
-  <br/>
-  <div class="text">
-	<div class="image">
-	  <img src="img/soccer_pic.png" width=60% height=60% alt="soccer">
+    <div class="image">
+      <div class="text">
+        <h4> Soccer </h4>
+		<p> Ex-DIII student athlete </p>
+        <img src="img/soccer_pic.png" width=50% height=50% alt="soccer"><br/>
+	    <br/>
+		<h4> Woodwork </h4>
+		<p> The most basic carpentry project </p>
+		<img src="img/cuttingboard_pic.png" width=50% height=60% alt="cutting board"><br/>
+		<br/>
+		<h4> Sparkling water </h4>
+		<p> See <a href="https://www.ultraseltzer.org">Ultra Seltzer</a></p><br/>
 	  </div>
+	</div> 
+  </div>
+  <div class="column right">
+    <div class="image">
+	  <div class="text">
+	    <h4> Backpacking </h4>
+		<p> Trinity Alps, CA </p>
+		<img src="img/backpacking_pic.png" width=60% height=90% alt="backpacking"><br/>
+		<br/>
+		<h4> Fishing </h4>
+		<p> Lake Brazeau, AB </p>
+		<img src="img/fishing_pic.png" width=60% height=90% alt="fishing"><br/>
+		<br/>
+		<h4> Snowboarding </h4>
+		<p> Squaw, Los Alamos, Taos </p>
+		<br/>
+      </div>
 	</div>
-	</div>
-  
+  </div>
 </div>
+<br/>
 
-
-
-	
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
-	<div class="col-md-2 ">
+	<div class="col-md-2">
        	<p class="text-md-left text-center" style="">
         	Kevin W. Gao &copy;
                 <script>
