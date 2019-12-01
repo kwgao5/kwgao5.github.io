@@ -41,12 +41,17 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/snip.css">
 </head>
 
 <style>
 * {
 	box-sizing: border-box;
+	}
+	
+img {
+	vertical-align: middle;
+	max-width: 70%;
+	height: auto;
 	}
 
 body {
@@ -88,12 +93,6 @@ body {
 	display: table;
 	clear: both;
 	}
-  
-.image {
-	max-width: 100%;
-	height: auto;
-	max-height: 100%;
-	}
 	
 .column {
 	float: left;
@@ -115,54 +114,234 @@ body {
 h2.title{
 	padding: 20px;
 	}
+
+/* Slideshow container */
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+	}
+
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: relative;
+	padding: 5px;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 2px 2px 0;
+	user-select: none;
+	margin-left: 10%;
+	margin-right: 10%;
+	}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+	}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+	}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	}
+
+.dot2 {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	}
+
+.active, .dot:hover, .dot2:hover {
+	background-color: #717171;
+	}
+	
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+	.prev, .next, .dot, .dot2 {
+		font-size: 10px;
+		height: 7px;
+		width: 7px;
+		}		
+	}
 </style>
 
 <body>
 <div class="header">
-  <h1>Kevin W. Gao</h1>
-  <span class="byline"> Personal Page </span>
+	<h1>Kevin W. Gao</h1>
+	<span class="byline"> Personal Page </span>
 </div>
 
 <div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="professional.html">Professional</a>
-  <a href="">Personal</a>
-  <a href="https://www.ultraseltzer.org">Ultra Seltzer</a>
+	<a href="index.html">Home</a>
+	<a href="professional.html">Professional</a>
+	<a href="">Personal</a>
+	<a href="https://www.ultraseltzer.org">Ultra Seltzer</a>
 </div>
 
 <h2 class="title"> Hobbies and Projects </h2>
 <div class="row">
-  <div class="column left">
-    <div class="image">
-      <div class="text">
-        <h4> Soccer </h4>
-		<p> Ex-DIII student athlete </p>
-        <img src="img/soccer_picture.png" width=50% height=50% alt="Caltech soccer"><br/>
-	    <br/><br/>
-		<h4> Woodwork </h4>
-		<p> The most basic carpentry project </p>
-		<img src="img/cuttingboard_picture.png" width=50% height=60% alt="cutting board"><br/>
-		<br/><br/>
-		<h4> Sparkling water </h4>
-		<p> See <a href="https://www.ultraseltzer.org">Ultra Seltzer</a></p>
-		<br/>
-	  </div>
+	<div class="column left">
+		<div class="text">
+			<h4> Soccer </h4>
+			<p> Ex-college player </p>
+			<div class="slideshow-container">
+				<div class="mySlides">
+					<img src="img/soccer_picture.png" alt="Caltech soccer 2015">
+				</div>
+				<div class="mySlides">
+					<img src="img/soccer_picture2.png" alt="Caltech soccer 2014">
+				</div>
+				<div class="mySlides">
+					<img src="img/soccer_picture3.png" alt="Caltech soccer 2015">
+				</div>
+				<div class="mySlides">
+					<img src="img/soccer_picture4.png" alt="Caltech soccer 2016">
+				</div>
+				<div class="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span> 
+					<span class="dot" onclick="currentSlide(2)"></span> 
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span> 					
+				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			
+			<!-- JS for slideshows -->
+			<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+			</script>
+			<br/><br/>
+			
+			<h4> Woodwork </h4>
+			<p> Basic carpentry projects </p>
+			<img src="img/cuttingboard_picture.png" height=70% width=70% title="the most basic carpentry project, the cutting board" alt="cutting board"><br/>
+			<br/><br/>
+		</div>
 	</div> 
-  </div>
-  <div class="column right">
-    <div class="image">
-	  <div class="text">
-	    <h4> Backpacking </h4>
-		<p> Trinity Alps, CA </p>
-		<img src="img/backpacking_picture.png" width=60% height=90% alt="backpacking"><br/>
-		<br/><br/>
-		<h4> Fishing </h4>
-		<p> Lake Brazeau, AB </p>
-		<img src="img/fishing_picture.png" width=60% height=90% alt="fishing"><br/>
-		<br/><br/>
-      </div>
+	<div class="column right">
+		<div class="text">
+			<h4> Outdoors </h4>
+			<p> Backpacking, hiking, fishing </p>
+			
+			<div class="slideshow-container">
+				<div class="mySlides2">
+					<img src="img/backpacking_picture.png" title="Trinity Alps, CA" alt="backpacking in Trinity Alps, CA">
+				</div>
+				<div class="mySlides2">
+					<img src="img/fishing_picture.png" title="Jasper, AB" alt="fishing in Jasper, Canada">
+				</div>
+				<div class="mySlides2">
+					<img src="img/kolob_arch_picture.png" title="Kolob Arch, UT (6th longest arch in the world)" alt="backpacking near Zion, UT">
+				</div>
+				<div class="mySlides2">
+					<img src="img/mt_san_jacinto_picture.png" title="Mt. San Jacinto, CA" alt="backpacking on Mt. San Jacinto, CA">
+				</div>
+				<div class="mySlides2">
+					<img src="img/boundary_waters_picture.png" title="Boundary Waters, MN" alt="fishing in Boundary Waters, MN">
+				</div>
+				<div class="mySlides2">
+					<img src="img/sequoias_picture.png" title="Sequoias, CA" alt="backpacking in Sequoias, CA">
+				</div>
+				<div class="mySlides2">
+					<img src="img/praire_creek_redwoods_picture.png" title="Praire Creek - Redwoods, CA" alt="backpacking in Redwoods, CA">
+				</div>
+				<div class="text-align:center">
+					<span class="dot2" onclick="currentSlide2(1)"></span> 
+					<span class="dot2" onclick="currentSlide2(2)"></span> 
+					<span class="dot2" onclick="currentSlide2(3)"></span> 
+					<span class="dot2" onclick="currentSlide2(4)"></span> 
+					<span class="dot2" onclick="currentSlide2(5)"></span> 
+					<span class="dot2" onclick="currentSlide2(6)"></span> 
+					<span class="dot2" onclick="currentSlide2(7)"></span> 
+				</div>
+				<a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides2(1)">&#10095;</a>
+			</div>
+			
+			<!-- JS for slideshows -->
+			<script>
+			var slideIndex2 = 1;
+			showSlides2(slideIndex2);
+
+			function plusSlides2(n) {
+			  showSlides2(slideIndex2 += n);
+			}
+
+			function currentSlide2(n) {
+			  showSlides2(slideIndex2 = n);
+			}
+
+			function showSlides2(n) {
+			  var j;
+			  var slides2 = document.getElementsByClassName("mySlides2");
+			  var dots2 = document.getElementsByClassName("dot2");
+			  if (n > slides2.length) {slideIndex2 = 1}    
+			  if (n < 1) {slideIndex2 = slides2.length}
+			  for (j = 0; j < slides2.length; j++) {
+				  slides2[j].style.display = "none";  
+			  }
+			  for (j = 0; j < dots2.length; j++) {
+				  dots2[j].className = dots2[j].className.replace(" active", "");
+			  }
+			  slides2[slideIndex2-1].style.display = "block";  
+			  dots2[slideIndex2-1].className += " active";
+			}
+			</script>		
+			<br/><br/>
+			
+			<h4> Sparkling water </h4>
+			<p> See <a href="https://www.ultraseltzer.org">Ultra Seltzer</a></p>
+			<br/>
+			<h4> Reading </h4>
+			<p> Mainly fantasy and scifi </p>
+			<br/>
+			<h4> Recipes </h4>
+			<p> Coming soon... </p>
+		</div>
 	</div>
-  </div>
 </div>
 <br/>
 
@@ -171,10 +350,10 @@ h2.title{
 	<div class="col-md-2">
        	<p class="text-md-left text-center" style="">
         	Kevin W. Gao &copy;
-                <script>
-			document.write(new Date().getFullYear());
-                </script>
-        </div>
+            <script>
+				document.write(new Date().getFullYear());
+            </script>
+    </div>
 </footer>
 
 </html>
