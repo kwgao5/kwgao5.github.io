@@ -46,7 +46,8 @@
 	
 img {
 	vertical-align: middle;
-	max-width: 70%;
+	max-width: 75%;
+	max-heigh: 75%;
 	height: auto;
 	}
 
@@ -163,8 +164,18 @@ h2.title{
 	border-radius: 50%;
 	display: inline-block;
 	}
+	
+.dot3 {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	}
 
-.active, .dot:hover, .dot2:hover {
+.active, .dot:hover, .dot2:hover, .dot3:hover{
 	background-color: #717171;
 	}
 	
@@ -186,7 +197,7 @@ h2.title{
 	
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 600px) {
-	.prev, .next, .dot, .dot2 {
+	.prev, .next, .dot, .dot2, .dot3 {
 		font-size: 10px;
 		height: 7px;
 		width: 7px;
@@ -283,7 +294,10 @@ h2.title{
 			
 			<h4> Woodwork </h4>
 			<p> Simple carpentry projects </p>
-			<img src="img/cuttingboard_picture.png" height=60% width=60% title="the simplest carpentry project, the cutting board" alt="cutting board"><br/>
+			<img src="img/cuttingboard_picture.png" height=80% width=80% title="the simplest carpentry project, the cutting board" alt="cutting board"><br/>
+			<br/><br/>
+			<h4> Sparkling water </h4>
+			<p> See <a href="https://ultraseltzer.org">Ultra Seltzer</a></p>
 			<br/><br/>
 		</div>
 	</div> 
@@ -369,18 +383,71 @@ h2.title{
 			  slides2[slideIndex2-1].style.display = "block";  
 			  dots2[slideIndex2-1].className += " active";
 			}
-			</script>		
+			</script>			
 			<br/><br/>
 			
-			<h4> Sparkling water </h4>
-			<p> See <a href="https://ultraseltzer.org">Ultra Seltzer</a></p>
-			<br/>
+			<h4> Baking </h4>
+			<p> Pizza, etc. </p>
+			<div class="slideshow-container">
+				<div class="mySlides3">
+					<div class="thumbnail">
+					<img src="img/pizza030220.png" title="great pizza, 3/2/20" alt="great pizza">
+					</div>
+				</div>
+				<div class="mySlides3">
+					<div class="thumbnail">
+					<img src="img/pizza030120.png" title="ok pizza, 3/1/20" alt="ok pizza">
+					</div>
+				</div>
+				<div class="mySlides3">
+					<div class="thumbnail">
+					<img src="img/pizza012620.png" title="poverty pizza, 1/26/20" alt="bad pizza">
+					</div>
+				</div>
+				<div class="text-align:center">
+					<span class="dot3" onclick="currentSlide3(1)"></span> 
+					<span class="dot3" onclick="currentSlide3(2)"></span> 
+					<span class="dot3" onclick="currentSlide3(3)"></span> 
+				</div>
+				<a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides3(1)">&#10095;</a>
+			</div>
+			
+			<!-- JS for slideshows -->
+			<script>
+			var slideIndex3 = 1;
+			showSlides3(slideIndex3);
+
+			function plusSlides3(n) {
+			  showSlides3(slideIndex3 += n);
+			}
+
+			function currentSlide3(n) {
+			  showSlides3(slideIndex3 = n);
+			}
+
+			function showSlides3(n) {
+			  var k;
+			  var slides3 = document.getElementsByClassName("mySlides3");
+			  var dots3 = document.getElementsByClassName("dot3");
+			  if (n > slides3.length) {slideIndex3 = 1}    
+			  if (n < 1) {slideIndex3 = slides3.length}
+			  for (k = 0; k < slides3.length; k++) {
+				  slides3[k].style.display = "none";  
+			  }
+			  for (k = 0; k < dots3.length; k++) {
+				  dots3[k].className = dots3[k].className.replace(" active", "");
+			  }
+			  slides3[slideIndex3-1].style.display = "block";  
+			  dots3[slideIndex3-1].className += " active";
+			}
+			</script>
+			<br/><br/>
 			<h4> Reading </h4>
 			<p> Mainly fantasy and sci/fi<br/>
 			<br/>
 			<h4> Music </h4>
 			<p> Piano, harmonica </p>
-			<br/>
 		</div>
 	</div>
 </div>
