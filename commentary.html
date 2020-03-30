@@ -131,6 +131,10 @@ body {
   	<font size="3">
     <p> <b>Email</b> kwgao@berkeley.edu <br/> 
 	     to request commentary on a topic of your choice </p><br/>
+	<!-- <h4> 04/02/2020 - White Rock, NM </h4>
+	<font size="3">
+	
+	</font><br/><br/> -->
 	<h4> 03/16/2020 - Los Angeles, CA </h4>
 	<font size="3">
 	The modern day college dormitory is just a prison. Even bathroom access requires a key card. Privacy is next to nil. The rooms (cells) are tiny, and the students (inmates) are crammed in by the handful. The architecture is drab and the atmosphere dry. Or maybe that's just UCLA's dormitory.
@@ -170,10 +174,13 @@ body {
 </div>
 <!-- start footer Area -->
 <footer class="footer-area">
-	<font size="1.5">
-	&emsp; Disclaimer: all opinions expressed on this page are strictly fictional.
-	</font><br/>
+	<div id="spoiler" style="display:none">
+		<font size="3" color="red">
+		&emsp;All opinions expressed on this page are strictly fictional.
+		</font><br/>
+	</div>
 	<div class="col-md-2 ">
+	<button title="Disclaimer" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Disclaimer</button>
        	<p class="text-md-left text-center" style="">	
         	Kevin W. Gao &copy;
                 <script>
