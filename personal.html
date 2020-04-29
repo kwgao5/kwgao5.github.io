@@ -174,8 +174,18 @@ h2.title{
 	border-radius: 50%;
 	display: inline-block;
 	}
+	
+.dot4 {
+	cursor: pointer;
+	height: 12px;
+	width: 12px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	}
 
-.active, .dot:hover, .dot2:hover, .dot3:hover{
+.active, .dot:hover, .dot2:hover, .dot3:hover, .dot4:hover{
 	background-color: #717171;
 	}
 	
@@ -197,7 +207,7 @@ h2.title{
 	
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 600px) {
-	.prev, .next, .dot, .dot2, .dot3 {
+	.prev, .next, .dot, .dot2, .dot3, .dot4 {
 		font-size: 10px;
 		height: 7px;
 		width: 7px;
@@ -215,7 +225,7 @@ h2.title{
 	<a href="index.html">Home</a>
 	<a href="professional.html">Professional</a>
 	<a href="">Personal</a>
-    <a href="commentary.html">Commentaries</a>
+    <a href="blurbs.html">Blurbs</a>
 </div>
 
 <h2 class="title"> Hobbies and Projects </h2>
@@ -294,7 +304,54 @@ h2.title{
 			
 			<h4> Woodwork </h4>
 			<p> Simple carpentry projects </p>
-			<img src="img/cuttingboard_picture.png" height=80% width=80% title="the simplest carpentry project, the cutting board" alt="cutting board"><br/>
+			<div class="slideshow-container">
+				<div class="mySlides4">
+					<div class="thumbnail">
+					<img src="img/cuttingboard_picture.png" height=80% width=80% title="the simplest carpentry project, the cutting board" alt="cutting board">
+					</div>
+				</div>	
+				<div class="mySlides4">
+					<div class="thumbnail">
+					<img src="img/cuttingboard_bigger_picture.png" title="a bigger cutting board" alt="cutting board">
+					</div>
+				</div>
+				<div class="text-align:center">
+					<span class="dot4" onclick="currentSlide4(1)"></span> 
+					<span class="dot4" onclick="currentSlide4(2)"></span> 
+				</div>
+				<a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides4(1)">&#10095;</a>
+				
+				<!-- JS for slideshows -->
+				<script>
+				var slideIndex4 = 1;
+				showSlides4(slideIndex4);
+
+				function plusSlides4(n) {
+				  showSlides4(slideIndex4 += n);
+				}
+
+				function currentSlide4(n) {
+				  showSlides4(slideIndex4 = n);
+				}
+
+				function showSlides4(n) {
+				  var i;
+				  var slides4 = document.getElementsByClassName("mySlides4");
+				  var dots4 = document.getElementsByClassName("dot4");
+				  if (n > slides4.length) {slideIndex4 = 1}    
+				  if (n < 1) {slideIndex4 = slides4.length}
+				  for (i = 0; i < slides4.length; i++) {
+					  slides4[i].style.display = "none";  
+				  }
+				  for (i = 0; i < dots4.length; i++) {
+					  dots4[i].className = dots4[i].className.replace(" active", "");
+				  }
+				  slides4[slideIndex4-1].style.display = "block";  
+				  dots4[slideIndex4-1].className += " active";
+				}
+				</script>
+			</div>
 			<br/><br/>
 			<h4> Sparkling water </h4>
 			<p> See <a href="https://ultraseltzer.org">Ultra Seltzer</a></p>
@@ -391,12 +448,12 @@ h2.title{
 			<div class="slideshow-container">
 				<div class="mySlides3">
 					<div class="thumbnail">
-					<img src="img/pizza030220.png" title="great pizza, 3/2/20" alt="great pizza">
+					<img src="img/pizza030220.png" title="great pizza" alt="great pizza">
 					</div>
 				</div>
 				<div class="mySlides3">
 					<div class="thumbnail">
-					<img src="img/pizza030120.png" title="ok pizza, 3/1/20" alt="ok pizza">
+					<img src="img/pizza030120.png" title="ok pizza" alt="ok pizza">
 					</div>
 				</div>
 				<!-- <div class="mySlides3">
